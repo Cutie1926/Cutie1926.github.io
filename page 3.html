@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOOMER</title>
+  <link rel="icon" href="boomer.png">
+  <style>
+    body {
+      font-family: 'ComicSans Ms',cursive;
+      height:100%;
+      margin : 0;
+      padding: 0;
+      font-size: 1.2rem;
+    }
+     #typing-container {
+      white-space: pre-wrap;
+      display: inline;
+    }
+    .cursor {
+      display: inline-block;
+      width: 6px; /* Thin blinking cursor */
+      height: 0.9em;
+      background-color: #030706;
+      margin-left: 2px;
+      animation: blink 0.6s step-start infinite;
+      
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      flex-grow:unset;
+    }
+    #page2 {
+      background: linear-gradient(to right, #85aeec, #f99af9);
+    }
+
+    #page3{
+      background: linear-gradient(to right, #d765e9, #b107cb);
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #131313;
+    }
+    h2{
+      color:rgb(15, 16, 16);
+    }
+  </style>
+</head>
+<body>
+  <!-- PAGE 2-->
+  <section id="page2">
+    <center>
+    <p>
+    <h1>DISCLAIMER</h1> 
+    <hr>
+    <h2>
+    A BOOMER ALETE...<br><br>
+    BETTRE TO AVOID THE NEXT PAGE <br><br>
+    IF DON'T WANT TO... <br><br>
+    </h2>
+    THEN CLICK HERE <br><br>
+    <a href="#page3" id="goToPage3">NEXT</a> <h2>OR</h2>
+    CLICK HERE TO GO PAGE 4<br><br>
+    <a href="C:\HELLO\BDAY\page 4.html">PAGE 4</a>
+    </p>
+    </center>
+    </section>
+   <!-- PAGE 3-->
+    <section id="page3">
+    <h3>Welcome to World "BOOMER"</h3>
+    <div id="typing-container"></div>
+    <br><br>
+    
+  
+   <!-- Hidden Audio -->
+    <audio id="myAudio" preload="auto">
+      <source src="perfect.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+   </section>
+   
+   <script>
+    
+    const audio = document.getElementById("myAudio");
+    const startTime = 3;  
+    const endTime = 95;    
+
+    
+    document.getElementById("goToPage3").addEventListener("click", (e) => {
+      setTimeout(() => {
+        audio.currentTime = startTime;
+        audio.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      }, 500); 
+    });
+     audio.addEventListener("timeupdate", () => {
+      if (audio.currentTime >= endTime) {
+        audio.currentTime = startTime;
+        audio.play();
+      }
+    });
+     // ----------- Typing Effect -----------
+    const text = `Today August 19... 
+Most important day in my life...And...Yes, It's my babe's 18th Birthday 🥳🤩...
+Happy 8 teen di pondati
+
+On this special day,
+I want you to know how grateful I am 🙌...To have you in my life 💗🙏...Your Laughter fills my days with joy 💟 , your love gives me strength and energy  💪 ,and your presence makes things better 😫...And your absents makes me cry 😭😭 
+
+You are not just a my girlfriend, you are my best friend, my bestie, my crush, my soulmate, my partner in crime, the first and last love of my life 🫂💜...
+
+I am not obsessed with you...but with your Hight, with your body language, with your eyes, with your lips, with your nose, with your cute smile, with your voice and especially with your nose ring and with your way of speaking  bad words 😫😫😫
+And your not like other stupid girls... 🫵 you are unique and pure...That made me to fall harder and harder on you 
+
+Today is the day to celebrate YOU 🫵 , I mean... 
+Your kindness, your beauty, your amazing spirit, and all the wonderful things that make you uniquely you. I hope this new year of your life brings you endless happiness, incredible adventures, and all your dreams come true.
+
+Not only today...Every day...
+I am going to celebrate you and I am going to worship you my girl ❣️
+
+Once again Happy Birthday di Pondatiii 🌍 ! 
+Here's to many more years of laughter, love, and beautiful memories together.`;
+
+    const container = document.getElementById("typing-container");
+
+    // Create and append a single blinking cursor
+    const cursor = document.createElement("span");
+    cursor.className = "cursor";
+    container.appendChild(cursor);
+
+    let charIndex = 0;
+  
+    function typeNextChar() {
+      if (charIndex < text.length) {
+        const char = text.charAt(charIndex);
+        cursor.insertAdjacentText("beforebegin", char);
+        charIndex++;
+        setTimeout(typeNextChar, 60); // Typing speed
+      }
+    }
+
+    window.onload = () => {
+      typeNextChar();
+    };
+    </script>
+    
+    <center>
+    <a href="C:\HELLO\BDAY\page 4.html">NEXT</a>
+    </center>
+</body>
+</html>

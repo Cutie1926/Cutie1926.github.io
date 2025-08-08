@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cutie_Pieee🥰</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: 'ComicSans Ms',cursive;
+             background: linear-gradient(to right, #e97dc5, #ce9bf9);
+        }
+        input {
+            border: 2px solid black;
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #message {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Welcome! Please Login</h2>
+    <form onsubmit="validateLogin(event)">
+        <input type="text" id="username" placeholder="Enter Username" required><br>
+        <input type="password" id="password" placeholder="Enter Password" required><br>
+        <button type="submit">Login</button>
+        
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value;
+
+            if (username === "Cutie_Pieee" && password === "19-08-2007") {
+                window.location.href = "page 1.html";
+            } else {
+                document.getElementById("message").innerText = "Invalid username or password. Try again!";
+            }
+        }
+    </script>
+
+</body>
+</html>
